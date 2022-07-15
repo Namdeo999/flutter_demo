@@ -36,7 +36,8 @@ class _HomeScreenState extends State<HomeScreen> {
       ),
       body: Column(
         children:  [
-          FutureBuilder(
+          Expanded(
+            child: FutureBuilder(
             future: getPostApi(),
             builder: (context, snapshot) 
             {
@@ -47,10 +48,27 @@ class _HomeScreenState extends State<HomeScreen> {
                   itemCount: postList.length,
                   itemBuilder: (context, index) {
 
-                  return Text(index.toString());
+                  // return Text(postList[index].title.toString());
+                  return Card(
+                    child:Padding(padding: const EdgeInsets.all(7.0),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text('Title', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+                          Text(postList[index].title.toString()),
+                          SizedBox(height: 5,),
+                          Text('Description', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+                          SizedBox(height: 5,),
+                          Text(postList[index].body.toString())
+                        ],
+                      ),
+                    )
+                  );
                 });
               }
             },
+          )
           )
         ],
       ),
