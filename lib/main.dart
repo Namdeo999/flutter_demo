@@ -1,4 +1,7 @@
+import 'package:demo_app/example_four.dart';
+import 'package:demo_app/example_three.dart';
 import 'package:demo_app/example_two.dart';
+import 'package:demo_app/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:demo_app/home_screen.dart';
 
@@ -17,7 +20,7 @@ class MyApp extends StatelessWidget {
         
         primarySwatch: Colors.blue,
       ),
-      home: const ExampleTwo(),
+      home: const ExampleFour(),
     );
   }
 }

@@ -34,7 +34,7 @@ class _ExampleTwoState extends State<ExampleTwo> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title:  Text('API Testing'),
+        title: Text('API Testing'),
       ),
       body: Column(children: [
         Expanded(
