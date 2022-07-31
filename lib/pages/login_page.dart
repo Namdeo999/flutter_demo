@@ -37,12 +37,12 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             children: [
               Image.asset(
-                'assets/images/hey_img.png',
+                "assets/images/hey_img.png",
                 fit: BoxFit.cover,
               ),
               SizedBox(height: 20.0),
               Text(
-                'Welcome $name',
+                "Welcome $name",
                 style: TextStyle(fontSize: 28, fontWeight: FontWeight.bold),
               ),
               SizedBox(height: 20.0),
@@ -54,8 +54,8 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     TextFormField(
                       decoration: InputDecoration(
-                        hintText: 'Enter username',
-                        labelText: 'Username',
+                        hintText: "Enter username",
+                        labelText: "Username",
                       ),
                       validator: (value) {
                         if (value!.isEmpty) {
@@ -71,13 +71,13 @@ class _LoginPageState extends State<LoginPage> {
                     TextFormField(
                       obscureText: true,
                       decoration: InputDecoration(
-                        hintText: 'Enter password',
-                        labelText: 'Password',
+                        hintText: "Enter password",
+                        labelText: "Password",
                       ),
                       validator: (value) {
                         if (value!.isEmpty) {
                           return "Password cannot be empty";
-                        } else if (value!.length < 8) {
+                        } else if (value.length < 8) {
                           return "Password length should be 8";
                         }
                         return null;
@@ -97,7 +97,7 @@ class _LoginPageState extends State<LoginPage> {
                           height: 50,
                           alignment: Alignment.center,
                           child: changeButton
-                              ? Icon(
+                              ? const Icon(
                                   Icons.done,
                                   color: Colors.white,
                                 )
