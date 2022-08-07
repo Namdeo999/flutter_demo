@@ -1,4 +1,6 @@
+import 'package:demo_app/models/catelog.dart';
 import 'package:demo_app/widgets/drawer.dart';
+import 'package:demo_app/widgets/item_widget.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatelessWidget {
@@ -7,6 +9,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final dummyList = List.generate(20, ((index) => CatelogModal.items[0]));
+
     return Scaffold(
       appBar: AppBar(
         // backgroundColor: Colors.white,
@@ -17,9 +21,17 @@ class HomePage extends StatelessWidget {
           // style: TextStyle(color: Colors.black),
         ),
       ),
-      body: Center(
-        child: Container(
-          child: Text('First App $days'),
+      body: Padding(
+        padding: const EdgeInsets.all(12.0),
+        child: ListView.builder(
+          // itemCount: CatelogModal.items.length,
+          itemCount: dummyList.length,
+          itemBuilder: (context, index) {
+            return ItemWidget(
+              // item: CatelogModal.items[index],
+              item: dummyList[index],
+            );
+          },
         ),
       ),
       drawer: MyDrawer(),
